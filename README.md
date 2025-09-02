@@ -8,9 +8,70 @@ lazy.nvim
 ```lua
 {
     "rgarofano/omarchy-theme.nvim",
+    dependencies = {
+        {
+            "catppuccin/nvim",
+            name = "catppuccin",
+            lazy = true,
+            config = function()
+                require("catppuccin").setup({
+                    transparent_background = true,
+                    float = {
+                        transparent = false,
+                        solid = false,
+                    }
+                })
+            end,
+        },
+        {
+            "ribru17/bamboo.nvim",
+            name = "bamboo",
+            lazy = true,
+            config = function()
+                require("bamboo").setup({
+                    transparent = true,
+                })
+            end,
+        },
+        {
+            "folke/tokyonight.nvim",
+            name = "tokyonight",
+            lazy = true,
+            config = function()
+                require("tokyonight").setup({
+                    transparent = true
+                })
+            end
+        },
+        {
+            "neanias/everforest-nvim",
+            name = "everforest",
+            lazy = true
+        },
+        {
+          "ellisonleao/gruvbox.nvim",
+          name = "gruvbox",
+          lazy = true
+        },
+        {
+            "rebelot/kanagawa.nvim",
+            name = "kanagawa",
+            lazy = true
+        },
+        {
+            "tahayvr/matteblack.nvim",
+            name = "matteblack",
+            lazy = true
+        },
+        {
+            "EdenEast/nightfox.nvim",
+            name = "nordfox",
+            lazy = true
+        },
+    },
     config = function()
         require("omarchy-theme").setup()
-    end
+    end,
 }
 ```
 

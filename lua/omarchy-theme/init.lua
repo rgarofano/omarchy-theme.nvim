@@ -1,48 +1,3 @@
-local supported_themes = {
-    catppuccin = {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        lazy = true,
-        config = function()
-            require("catppuccin").setup({
-                transparent_background = true,
-                float = {
-                    transparent = false,
-                    solid = false,
-                }
-            })
-        end,
-    },
-
-    bamboo = {
-        "ribru17/bamboo.nvim",
-        name = "bamboo",
-        lazy = true,
-        config = function()
-            require("bamboo").setup({
-                transparent = true,
-            })
-        end,
-    },
-
-    tokyonight = {
-        "folke/tokyonight.nvim",
-        name = "tokyonight",
-        lazy = true,
-        config = function()
-            require("tokyonight").setup({
-                transparent = true
-            })
-        end
-    },
-
-    everforest = { "neanias/everforest-nvim",    name = "everforest",  lazy = true },
-    gruvbox =    { "ellisonleao/gruvbox.nvim",   name = "gruvbox",     lazy = true },
-    kanagawa =   { "rebelot/kanagawa.nvim",      name = "kanagawa",    lazy = true },
-    matteblack = { "tahayvr/matteblack.nvim",    name = "matteblack",  lazy = true },
-    nordfox =    { "EdenEast/nightfox.nvim",     name = "nordfox",     lazy = true },
-}
-
 -- Helper Functions --
 
 local function omarchy_theme_file()
@@ -73,13 +28,9 @@ end
 local function set_current_theme()
     local colorscheme = parse_colorscheme(omarchy_theme_file())
 
-    if colorscheme == "default" or not supported_themes[colorscheme] then
+    if colorscheme == "default" then
         vim.cmd.colorscheme("default")
         return
-    end
-
-    if not require("lazy.core.config").plugins[colorscheme] then
-        require("lazy").install(supported_themes[colorscheme])
     end
 
     require("lazy").load({ plugins = { colorscheme } })
@@ -107,14 +58,6 @@ function omarchy_theme.setup()
     else
         vim.notify("Unable to start theme watcher", vim.log.levels.WARN)
     end
-end
-
-function omarchy_theme.spec()
-    local spec = {}
-    for _, theme_plugin in pairs(supported_themes) do
-        table.insert(spec, theme_plugin)
-    end
-    return spec
 end
 
 return omarchy_theme
