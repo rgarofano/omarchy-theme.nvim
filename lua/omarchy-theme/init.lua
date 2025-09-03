@@ -33,7 +33,15 @@ local function set_current_theme()
         return
     end
 
-    require("lazy").load({ plugins = { colorscheme } })
+    if colorscheme == "catppuccin-latte" then
+        require("lazy").load({ plugins = { "catppuccin" } })
+        require("catppuccin").setup({
+            flavour = "latte",
+        })
+    else
+        require("lazy").load({ plugins = { colorscheme } })
+    end
+
     vim.cmd.colorscheme(colorscheme)
 end
 

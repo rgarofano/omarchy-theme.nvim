@@ -13,10 +13,6 @@ lazy.nvim
     config = function()
         require("catppuccin").setup({
             transparent_background = true,
-            float = {
-                transparent = false,
-                solid = false,
-            }
         })
     end,
 },
@@ -100,6 +96,7 @@ lazy.nvim
 ## Supported Themes
 
 * Catppuccin
+* Catppuccin Latte
 * Everforest
 * Gruvbox
 * Kanagawa
