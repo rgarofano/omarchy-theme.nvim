@@ -86,6 +86,15 @@ lazy.nvim
     end,
 },
 {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        config = function()
+            require("rose-pine").setup({
+                variant = "dawn",
+            })
+        end
+},
+{
     "rgarofano/omarchy-theme.nvim",
     config = function()
         require("omarchy-theme").setup()
@@ -104,4 +113,5 @@ lazy.nvim
 * Nord
 * Osaka Jade
 * Ristretto
+* Rose Pine
 * Tokyo Night

@@ -42,6 +42,10 @@ local function set_current_theme()
         require("lazy").load({ plugins = { colorscheme } })
     end
 
+    if colorscheme == "rose-pine-dawn" then
+        colorscheme = "rose-pine"
+    end
+
     vim.cmd.colorscheme(colorscheme)
 end
 
