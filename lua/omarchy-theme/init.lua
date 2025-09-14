@@ -54,7 +54,7 @@ end
 local omarchy_theme = {}
 
 function omarchy_theme.setup()
-    vim.schedule(set_current_theme)
+    set_current_theme()
 
     -- Watch for changes to the omarchy theme directory symlink
     local watcher = vim.loop.new_fs_event()
