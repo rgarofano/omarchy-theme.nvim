@@ -29,8 +29,20 @@ local function set_current_theme()
     local colorscheme = parse_colorscheme(omarchy_theme_file())
 
     if colorscheme == "default" then
+        vim.cmd("hi clear")
         vim.cmd.colorscheme("default")
         return
+    end
+
+    if colorscheme == "catppuccin-latte" or colorscheme == "rose-pine-dawn" then
+        vim.o.background = "light"
+    else
+        vim.o.background = "dark"
+    end
+
+    vim.cmd("hi clear")
+    if vim.fn.exists("syntax_on") then
+        vim.cmd("syntax reset")
     end
 
     if colorscheme == "catppuccin-latte" then
