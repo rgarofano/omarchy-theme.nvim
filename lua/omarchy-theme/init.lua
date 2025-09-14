@@ -50,6 +50,11 @@ local function set_current_theme()
         require("catppuccin").setup({
             flavour = "latte",
         })
+    elseif colorscheme == "catppuccin" then
+        require("lazy").load({ plugins = { "catppuccin" } })
+        require("catppuccin").setup({
+            flavour = "mocha",
+        })
     else
         require("lazy").load({ plugins = { colorscheme } })
     end
