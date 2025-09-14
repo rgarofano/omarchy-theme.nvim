@@ -2,6 +2,8 @@
 
 A Neovim plugin that syncs your editors colorscheme with the rest of Omarchy. Omarchy ships with this feature out of the box, but it requires the use of LazyVim. This plugin works independent of LazyVim. It integrates with the [lazy.nvim](https://github.com/folke/lazy.nvim) plugin manager.
 
+![Demo](./demo.gif)
+
 ## Installation
 
 lazy.nvim
