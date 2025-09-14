@@ -88,6 +88,7 @@ lazy.nvim
 {
         "rose-pine/neovim",
         name = "rose-pine",
+        lazy = true,
         config = function()
             require("rose-pine").setup({
                 variant = "dawn",
